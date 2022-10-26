@@ -1,0 +1,10 @@
+a {
+    text-decoration: none !important;
+}
+.navbar-nav {
+    --bs-nav-link-padding-y: 0rem !important;
+}
+
+.form-control {
+    width: 25rem !important;
+}

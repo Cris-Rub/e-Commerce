@@ -1,6 +1,7 @@
 import React from 'react'
 import { useProductContext } from '../../context/ListProducts'
 import Loading from '../Loading'
+import Product from '../Product'
 import { Row, Col } from 'react-bootstrap'
 
 const BoxProducts = () => {
@@ -11,13 +12,14 @@ const BoxProducts = () => {
       : (
         <Row>
           <Col>
-            <div id='box-products' className='row row-cols-4'>
+            <div id='box-products' className='row row-cols-5'>
               {
                   context.productList.map((product, index) => (
                     product.image !== undefined && (
-                      <div>
-                        {product.product_name}
-                      </div>
+                      <Product
+                        details={product}
+                        key={index}
+                      />
                     )
                   ))
                 }

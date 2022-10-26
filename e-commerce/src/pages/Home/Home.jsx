@@ -1,7 +1,7 @@
 import React from 'react'
-import BoxProducts from '../components/BoxProducts'
-import { Container, Row, Col } from 'react-bootstrap'
-import { ProductProvider } from '../context/ListProducts'
+import BoxProducts from '../../components/BoxProducts'
+import { Container } from 'react-bootstrap'
+import { ProductProvider } from '../../context/ListProducts'
 
 const Home = () => {
   return (

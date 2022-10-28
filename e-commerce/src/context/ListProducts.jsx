@@ -26,6 +26,7 @@ function ProductProvider (props) {
     productList,
     productSelected,
     setProductSelected,
+    setLoadingStatus,
     loadingStatus
   }
 

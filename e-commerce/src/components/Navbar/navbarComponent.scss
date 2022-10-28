@@ -1,0 +1,25 @@
+$theme-shop-color: rgb(177, 10, 0);
+
+@mixin header-pages {
+    color: $theme-shop-color !important;
+    text-decoration: none !important;
+}
+
+.navbar{
+    font-family: 'Ubuntu', sans-serif;
+    a {
+        @include header-pages;
+    }
+
+    &__toggle-dropdown {
+         a {
+            color: white !important;
+         }
+     }
+}
+
+.dropdown-menu {
+    a {
+        color: black !important;
+    }
+}

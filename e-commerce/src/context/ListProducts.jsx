@@ -6,7 +6,7 @@ const ProductContext = createContext()
 function ProductProvider (props) {
   const BASE_URL = 'https://ecomerce-master.herokuapp.com/api/v1/'
   const [productList, setProductList] = useState([])
-  const [productSelected, setProductSelected] = useState('')
+  const [searchProductValue, setSearchProductValue] = useState('')
   const [loadingStatus, setLoadingStatus] = useState(true)
 
   /* Se obtienen los productos de la API */
@@ -16,7 +16,7 @@ function ProductProvider (props) {
       .then(({ data }) => {
         setProductList(data)
         setLoadingStatus(false)
-        console.log(productList)
+        // console.log(productList)
       })
       .catch((error) => console.log(error))
   }, [])
@@ -24,8 +24,8 @@ function ProductProvider (props) {
   /* Los valores que contiene el contexto */
   const value = {
     productList,
-    productSelected,
-    setProductSelected,
+    searchProductValue,
+    setSearchProductValue,
     setLoadingStatus,
     loadingStatus
   }

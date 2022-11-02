@@ -8,7 +8,6 @@ const Product = ({ details }) => {
   const context = useProductContext()
   const navigate = useNavigate()
   const setProduct = (id) => {
-    context.setProductSelected(id)
     context.setLoadingStatus(true)
     navigate(`/product/${id}`)
   }

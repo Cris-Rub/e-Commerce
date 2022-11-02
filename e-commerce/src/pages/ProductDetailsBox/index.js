@@ -1,3 +1,3 @@
-import ProductDetailsBox from './ProductDetails'
+import ProductDetailsBox from './ProductDetailsBox'
 
 export default ProductDetailsBox

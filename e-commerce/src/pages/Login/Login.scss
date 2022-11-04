@@ -1,0 +1,36 @@
+$theme-shop-color: rgb(177, 10, 0);
+
+// body{
+//     background-color: rgb(11, 12, 13);
+// }
+
+
+.signup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__card{
+        border-radius: 15px;
+    }
+    &__title{
+        color: $theme-shop-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &__register{
+        display: flex;
+        justify-content: center;
+    }
+    &__already-account{
+        text-align: center;
+    }
+    a{
+        color: $theme-shop-color;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

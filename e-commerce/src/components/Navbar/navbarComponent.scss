@@ -5,7 +5,7 @@ $theme-shop-color: rgb(177, 10, 0);
     text-decoration: none !important;
 }
 
-.navbar{
+.navbar {
     font-family: 'Ubuntu', sans-serif;
     a {
         @include header-pages;
@@ -16,6 +16,9 @@ $theme-shop-color: rgb(177, 10, 0);
             color: white !important;
          }
      }
+}
+.navbar-collapse {
+    flex-grow: 0 !important;
 }
 
 .dropdown-menu {

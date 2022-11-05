@@ -23,9 +23,11 @@ https://documenter.getpostman.com/view/807695/Tzm6jvYY
 
 **Características generales:**
 
-- Mostrar productos
-- Mostrar detalles de producto
-- Buscar productos
+- Mostrar productos.
+- Mostrar detalles de producto.
+- Buscar productos.
+
+Al mostrar los productos en la página principal se consume la API proporcionada utilizando *Axios* renderizando asi cada uno de los productos por medio de *Cards*, diseñadas con *Bootstrap*, que contienen la imagen del producto, el nombre y su precio.
 
 **Funcionalidades**
 
@@ -39,8 +41,8 @@ https://documenter.getpostman.com/view/807695/Tzm6jvYY
 ### Inicio de Sesión y registro
 
 **Características generales**
-- Página de signup (registro)
-- Página de login (inicio de sesión)
+- Página de signup (registro).
+- Página de login (inicio de sesión).
 
 En esta parte de la página se consume la API de inicio de sesión de usuario y se realiza un formulario de registro. También se realiza el renderizado condicional en base de si estamos o no autenticados.
 Para iniciar sesión o registrarnos debemos hacer click en *account*, la cual se encunetra en la navbar del lado derecho. Una vez hecho el registro de nuestro usuario se nos redirige a la página para iniciar sesión y para después de realizar el inicio de sesión correcto devolvernos a la página principal y poder cerrar sesión por medio de las opciones añadidas en la parte de *account*.

@@ -8,7 +8,7 @@ import './navbarComponent.scss'
 
 const NavbarComponent = () => {
   // CONTEXT
-  const { isAuth, logout, userData } = useContext(AuthContext)
+  const { isAuth, logout, userData, user } = useContext(AuthContext)
   const context = useProductContext()
 
   const navigate = useNavigate()
@@ -46,7 +46,80 @@ const NavbarComponent = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-      <Navbar collapseOnSelect bg='dark' expand='lg' sticky='top' className='navbar'>
+      <header className='bg-dark pt-0 fs-6'>
+        <div className='container container-fluid'>
+          <div className='row'>
+            <div className='col'>
+              <Navbar bg='dark' expand='lg' sticky='top' className='navbar'>
+                <Container fluid>
+                  <Navbar.Brand className='navbar__logo fs-3'>
+                    <Link to='/home' className='fw-bold'>
+                      <img
+                        alt='logo'
+                        src={Logo}
+                        width='40'
+                        height='40'
+                        className='d-inline-block align-top'
+                      />{' '}
+                      One2Shop!
+                    </Link>
+                  </Navbar.Brand>
+                  <Form className='d-flex' onSubmit={submitSearch}>
+                    <Form.Control
+                      type='search'
+                      placeholder='Search any product here'
+                      className='me-2'
+                      aria-label='Search'
+                      name='searchValue'
+                      onChange={handleSearchValue}
+                    />
+                    <Button
+                      variant='outline-danger'
+                      type='submit'
+                    >Search
+                    </Button>
+                  </Form>
+                  <Navbar.Toggle aria-controls='navbarScroll' className='navbar__toggle' />
+                  <Navbar.Collapse id='navbarScroll'>
+                    <Nav
+                      className='ms-auto mb-2 mb-lg-0'
+                      style={{ maxHeight: '200px' }}
+                      navbarScroll
+                    >
+                      {
+                !isAuth
+                  ? (
+                    <NavDropdown title='Login / Sign up' id='basic-nav-dropdown' className='navbar__toggle-dropdown'>
+                      <NavDropdown.Item onClick={() => navigate('/login')} className='navbar__dropdown-item'>Login</NavDropdown.Item>
+                      <NavDropdown.Item onClick={() => navigate('/signup')} className='navbar__dropdown-item'>Sign Up</NavDropdown.Item>
+                    </NavDropdown>
+                    )
+                  : (
+                    <>
+                      {user?.role === 'ADMIN' && (
+                        <Nav.Link onClick={() => navigate('/create-product')}>
+                          Create product
+                        </Nav.Link>
+                      )}
+                      <NavDropdown title={userData.first_name} id='basic-nav-dropdown' className='navbar__toggle-dropdown'>
+                        <>
+                          <NavDropdown.Item onClick={() => navigate('/account')} className='navbar__dropdown-item'>My account</NavDropdown.Item>
+                          <NavDropdown.Divider />
+                          <NavDropdown.Item onClick={closeSesion} className='navbar__dropdown-item'>Log out</NavDropdown.Item>
+                        </>
+                      </NavDropdown>
+                    </>
+                    )
+              }
+                    </Nav>
+                  </Navbar.Collapse>
+                </Container>
+              </Navbar>
+            </div>
+          </div>
+        </div>
+      </header>
+      {/* <Navbar collapseOnSelect bg='dark' expand='lg' sticky='top' className='navbar'>
         <Container>
           <Navbar.Brand className='navbar__logo'>
             <Link to='/home' className='fw-bold'>
@@ -103,7 +176,7 @@ const NavbarComponent = () => {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar> */}
     </>
   )
 }

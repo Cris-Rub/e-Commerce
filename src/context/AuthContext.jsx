@@ -13,11 +13,15 @@ export function AuthProvider (props) {
   const loginUser = (token) => {
     window.localStorage.setItem('token', token) // Guardar token en localStorage
     const decoded = jwt_decode(token)
+    console.log(decoded)
     setUser(decoded)
+    console.log(user)
     setIsAuth(true)
+    console.log(isAuth)
   }
   const logout = () => {
     window.localStorage.removeItem('token') // Se elimina el token del usuario
+    console.log('logout')
     setIsAuth(false)
     setUser(null)
   }
@@ -30,15 +34,17 @@ export function AuthProvider (props) {
       setIsAuth(true)
     }
   }, [])
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
         const result = await getSingleUser(user.id)
         if (result.status === 200) {
           setUserData(result.data)
+          console.log('ejecucion')
         }
       } catch (error) {
-        console.log('Ocurrio un error en Dashboard: ' + error.message)
+        console.log('Ocurrio un error: ' + error.message)
       }
     }
     fetchUserData()

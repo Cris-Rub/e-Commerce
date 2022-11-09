@@ -9,7 +9,6 @@ const Signup = () => {
   const navigate = useNavigate()
 
   const sendData = async (data) => {
-    console.log(data)
     try {
       const result = await registerUserServices(data)
       if (result.status === 200) {

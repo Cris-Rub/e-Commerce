@@ -100,24 +100,6 @@ const NavbarComponent = () => {
                     </NavDropdown>
                     )
               }
-              {/* <NavDropdown title='Account' id='basic-nav-dropdown' className='navbar__toggle-dropdown'>
-                {
-                  !isAuth
-                    ? (
-                      <>
-                        <NavDropdown.Item onClick={() => navigate('/login')} className='navbar__dropdown-item'>Login</NavDropdown.Item>
-                        <NavDropdown.Item onClick={() => navigate('/signup')} className='navbar__dropdown-item'>Sign Up</NavDropdown.Item>
-                      </>
-                      )
-                    : (
-                      <>
-                        <NavDropdown.Item onClick={() => navigate('/account')} className='navbar__dropdown-item'>My account</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item onClick={logout} className='navbar__dropdown-item'>Log out</NavDropdown.Item>
-                      </>
-                      )
-                }
-              </NavDropdown> */}
             </Nav>
           </Navbar.Collapse>
         </Container>

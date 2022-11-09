@@ -1,8 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Account = () => {
   return (
-    <div>Account</div>
+    <div>
+      <h1>Account</h1>
+      <Link to='/create-product'>Account</Link>
+    </div>
   )
 }
 

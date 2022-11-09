@@ -10,13 +10,11 @@ const Login = () => {
   const { loginUser } = useContext(AuthContext)
   const navigate = useNavigate()
   const sendData = async (data) => {
-    console.log(data)
     try {
       const result = await loginUserServices(data)
-      console.log(result)
       if (result.status === 200) {
         loginUser(result.data.token)
-        navigate('/')
+        navigate('/home')
       }
     } catch (error) {
       console.log(error)

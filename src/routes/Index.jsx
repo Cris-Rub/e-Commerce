@@ -7,10 +7,11 @@ import ProductSearch from '../pages/ProductSearch'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
 import Account from '../pages/Account'
+import CreateProduct from '../pages/CreateProduct'
 import { AuthContext } from '../context/AuthContext'
 
 const RoutesIndex = () => {
-  const { isAuth } = useContext(AuthContext)
+  const { isAuth, user } = useContext(AuthContext)
 
   return (
     <Routes>
@@ -18,9 +19,21 @@ const RoutesIndex = () => {
       <Route path='/home' element={<Home />} />
       <Route path='/product/:id' element={<ProductDetailsBox />} />
       <Route path='/search/:value' element={<ProductSearch />} />
-      <Route path='/login' element={<Login />} />
+      <Route path='/login' element={!isAuth ? <Login /> : <Navigate to='/home' replace />} />
       <Route path='/signup' element={<Signup />} />
       <Route path='/account' element={isAuth ? <Account /> : <Navigate to='/login' replace />} />
+      <Route
+        path='/create-product'
+        element={
+          user?.role === 'ADMIN'
+            ? (
+              <CreateProduct />
+              )
+            : (
+              <Navigate to='/login' replace />
+              )
+        }
+      />
       <Route path='*' element={<Error />} />
     </Routes>
   )

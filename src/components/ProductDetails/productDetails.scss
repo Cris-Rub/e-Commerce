@@ -1,0 +1,25 @@
+$theme-shop-color: rgb(177, 10, 0);
+
+.card-header {
+    color: $theme-shop-color !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    font-size: x-large;
+}
+
+
+#product-price {
+    color: $theme-shop-color !important;
+    font-weight: bold !important;
+}
+
+.card-product-details {
+    &__title {
+        font-weight: bold !important;
+    }
+    &__shipping{
+       color: #ffc107; 
+    }
+
+    display: flex;
+}

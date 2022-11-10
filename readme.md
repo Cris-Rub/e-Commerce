@@ -73,5 +73,5 @@ La aplicación cuenta con la capacidad de distinguir a un usuario normal de un u
 Se puede visualizar el producto creado recargando en la misma página de inicio de la aplicación.
 
 Se puede probar esta función con el siguiente usuario administrador:
-*usuario: email.Admin@example.com*
-*contraseña: perrito123*
+- *usuario: email.Admin@example.com*
+- *contraseña: perrito123*

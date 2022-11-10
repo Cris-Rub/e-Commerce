@@ -17,6 +17,7 @@ const ProductDetails = ({ productId }) => {
       .get(`${BASE_URL}item/${productId}`)
       .then(({ data }) => {
         setProduct(data)
+        context.setLoadingStatus(false)
       })
       .catch((error) => console.log(error))
     context.setLoadingStatus(false)

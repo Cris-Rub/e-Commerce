@@ -57,3 +57,21 @@ Para iniciar sesión o registrarnos debemos hacer click en *account*, la cual se
 - En la navbar, del lado derecho, me sugiere hacer signup o login.
 - La vista de signup, y la vista de login, son urls diferentes ( /login /signup )
 - Hay un botón comprar en la vista individual del detalle de cada producto, pero este está desactivado y debes mostrar (como desees) una invitación a registrarte o iniciar sesión.
+
+*Con usuario (sesión iniciada)*
+- En la navbar aparece el nombre de usuario
+- Dentro el detalle individual de un producto, se muestra el boton "Comprar" habilitado.
+
+### Crear productos como administrador
+La aplicación cuenta con la capacidad de distinguir a un usuario normal de un usuario administrador. El usuario administrador podrá crear nuevos productos.
+
+**Funcionalidades ADMIN**
+- Tiene las mismas funcionalidades del COSTOMER.
+- Puede dar de alta nuevos productos.
+- Hay un enlace en la Navbar para cargar productos.
+
+Se puede visualizar el producto creado recargando en la misma página de inicio de la aplicación.
+
+Se puede probar esta función con el siguiente usuario administrador:
+*usuario: email.Admin@example.com*
+*contraseña: perrito123*

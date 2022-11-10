@@ -6,7 +6,6 @@ import Error from '../pages/Error'
 import ProductSearch from '../pages/ProductSearch'
 import Login from '../pages/Login'
 import Signup from '../pages/Signup'
-import Account from '../pages/Account'
 import CreateProduct from '../pages/CreateProduct'
 import { AuthContext } from '../context/AuthContext'
 
@@ -21,7 +20,6 @@ const RoutesIndex = () => {
       <Route path='/search/:value' element={<ProductSearch />} />
       <Route path='/login' element={!isAuth ? <Login /> : <Navigate to='/home' replace />} />
       <Route path='/signup' element={<Signup />} />
-      <Route path='/account' element={isAuth ? <Account /> : <Navigate to='/login' replace />} />
       <Route
         path='/create-product'
         element={

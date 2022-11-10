@@ -2,6 +2,9 @@
     color: rgb(177, 10, 0);
 }
 
+.card {
+    border-radius: 7px !important;
+}
 .card-image {
     object-fit: cover;
     width: 250px;

@@ -11,6 +11,7 @@ const CreateProduct = () => {
   const handleClose = () => setShow(false)
 
   const sendData = async (data) => {
+    console.log(data)
     try {
       const result = await createProduct(data)
       if (result.status === 200) {
@@ -46,11 +47,11 @@ const CreateProduct = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-      <div className='row signup m-3'>
+      <div className='row create-product m-3'>
         <div className='col-12 col-md-9 col-lg-7 col-xl-6'>
-          <Card className='signup__card'>
+          <Card className='create-product__card'>
             <Card.Body className='p-5'>
-              <Card.Title className='signup__title mb-5'>Create a product</Card.Title>
+              <Card.Title className='create-product__title mb-5'>Create a product</Card.Title>
               <Form onSubmit={handleSubmit}>
                 <Form.Group className='mb-4'>
                   <Form.Label>Name product</Form.Label>
@@ -59,7 +60,7 @@ const CreateProduct = () => {
                     placeholder='Enter your pruduct name'
                     name='product_name'
                     id='product_name'
-                    value={input.first_name}
+                    value={input.product_name}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
@@ -70,7 +71,7 @@ const CreateProduct = () => {
                     placeholder='Enter the product description'
                     name='description'
                     id='description'
-                    value={input.last_name}
+                    value={input.description}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
@@ -82,7 +83,7 @@ const CreateProduct = () => {
                     name='price'
                     id='price'
                     min='1'
-                    value={input.last_name}
+                    value={Number(input.price)}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
@@ -91,32 +92,32 @@ const CreateProduct = () => {
                   <Form.Select
                     id='category'
                     name='category'
-                    value={input.gender}
+                    value={input.category}
                     onChange={handleInputChange}
                   >
                     <option value=''>Choose...</option>
-                    <option value=''>Books</option>
-                    <option value=''>Movies</option>
-                    <option value=''>Music</option>
-                    <option value=''>Games</option>
-                    <option value=''>Electronics</option>
-                    <option value=''>Computer</option>
-                    <option value=''>Home</option>
-                    <option value=''>Garden</option>
-                    <option value=''>Tools</option>
-                    <option value=''>Grocery</option>
-                    <option value=''>Health</option>
-                    <option value=''>Beauty</option>
-                    <option value=''>Toys</option>
-                    <option value=''>Kids</option>
-                    <option value=''>Baby</option>
-                    <option value=''>Clothing</option>
-                    <option value=''>Shoes</option>
-                    <option value=''>Jewelery</option>
-                    <option value=''>Sports</option>
-                    <option value=''>Outdoors</option>
-                    <option value=''>Automotive</option>
-                    <option value=''>Industrial</option>
+                    <option value='Books'>Books</option>
+                    <option value='Movies'>Movies</option>
+                    <option value='Music'>Music</option>
+                    <option value='Games'>Games</option>
+                    <option value='Electronics'>Electronics</option>
+                    <option value='Computers'>Computers</option>
+                    <option value='Home'>Home</option>
+                    <option value='Garden'>Garden</option>
+                    <option value='Tools'>Tools</option>
+                    <option value='Grocery'>Grocery</option>
+                    <option value='Health'>Health</option>
+                    <option value='Beauty'>Beauty</option>
+                    <option value='Toys'>Toys</option>
+                    <option value='Kids'>Kids</option>
+                    <option value='Baby'>Baby</option>
+                    <option value='Clothing'>Clothing</option>
+                    <option value='Shoes'>Shoes</option>
+                    <option value='Jewelery'>Jewelery</option>
+                    <option value='Sports'>Sports</option>
+                    <option value='Outdoors'>Outdoors</option>
+                    <option value='Automotive'>Automotive</option>
+                    <option value='Industrial'>Industrial</option>
                   </Form.Select>
                 </Form.Group>
                 <Form.Group className='mb-4'>
@@ -126,7 +127,7 @@ const CreateProduct = () => {
                     placeholder='Enter the product brand'
                     name='brand'
                     id='brand'
-                    value={input.last_name}
+                    value={input.brand}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
@@ -137,12 +138,12 @@ const CreateProduct = () => {
                     placeholder='Enter the product sku'
                     name='sku'
                     id='sku'
-                    value={input.last_name || 'e9cbfac1-301a-42c3-b94a-711a39dc7ed1'}
+                    value={input.sku}
                     onChange={handleInputChange}
                   />
-                  <Form.Text className='text-muted'>
+                  {/* <Form.Text className='text-muted'>
                     Leave default value if you don't know the sku product.
-                  </Form.Text>
+                  </Form.Text> */}
                 </Form.Group>
                 <Form.Group className='mb-4'>
                   <Form.Label>Image</Form.Label>
@@ -151,14 +152,14 @@ const CreateProduct = () => {
                     placeholder='Enter the url for the product image'
                     name='image'
                     id='image'
-                    value={input.last_name}
+                    value={input.image}
                     onChange={handleInputChange}
                   />
                 </Form.Group>
-                <div className='signup__register'>
+                <div className='create-product__register'>
                   <Button variant='danger' type='submit'>Submit</Button>
                 </div>
-                <Card.Text className='signup__already-account text-muted mt-5 mb-0'>
+                <Card.Text className='create-product__already-account text-muted mt-5 mb-0'>
                   Need help?
                   <Link to='/contact'>Contact us</Link>
                 </Card.Text>

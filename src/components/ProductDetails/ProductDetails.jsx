@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import Loading from '../Loading'
 import { useProductContext } from '../../context/ListProducts'
 import { Row, Card, Button, Container } from 'react-bootstrap'
+import { AuthContext } from '../../context/AuthContext'
 import './productDetails.scss'
 
 const ProductDetails = ({ productId }) => {
+  const { isAuth } = useContext(AuthContext)
   const BASE_URL = 'https://ecomerce-master.herokuapp.com/api/v1/'
   const [product, setProduct] = useState({})
   const context = useProductContext()
@@ -51,8 +53,21 @@ const ProductDetails = ({ productId }) => {
                   </Card.Text>
                   <Row>
                     <div className='col-12 align-self-end'>
-                      <Button variant='danger' size='sm'>Buy now</Button>{' '}
-                      <Button variant='warning' size='sm'>Add to cart</Button>{' '}
+                      {
+                        !isAuth
+                          ? (
+                            <>
+                              <Button variant='danger' size='sm' disabled>Buy now</Button>{' '}
+                              <Button variant='warning' size='sm' disabled>Add to cart</Button>{' '}
+                            </>
+                            )
+                          : (
+                            <>
+                              <Button variant='danger' size='sm'>Buy now</Button>{' '}
+                              <Button variant='warning' size='sm'>Add to cart</Button>{' '}
+                            </>
+                            )
+                      }
                     </div>
                   </Row>
                 </div>

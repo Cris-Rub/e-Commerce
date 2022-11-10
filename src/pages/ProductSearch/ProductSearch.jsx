@@ -18,6 +18,7 @@ const ProductSearch = () => {
         ? <Loading />
         : (
           <Row>
+            <h2>Results for {searchValue}</h2>
             <Col>
               <div className='row row-cols-5'>
                 {

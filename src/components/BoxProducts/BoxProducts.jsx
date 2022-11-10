@@ -13,11 +13,12 @@ const BoxProducts = () => {
         ? <Loading />
         : (
           <Row>
+            <h2>All products</h2>
             <Col>
               <div className='row row-cols-5'>
                 {
                     context.productList.map((product, index) => (
-                      product.image !== undefined && (
+                      product.product_name !== 'gUITAR' && (
                         <Product
                           details={product}
                           key={index}

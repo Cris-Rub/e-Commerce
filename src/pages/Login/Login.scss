@@ -11,7 +11,7 @@ $theme-shop-color: rgb(177, 10, 0);
     align-items: center;
 
     &__card{
-        border-radius: 15px;
+        border-radius: 15px !important;
     }
     &__title{
         color: $theme-shop-color;

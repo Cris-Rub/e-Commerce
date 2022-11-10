@@ -12,7 +12,7 @@ const Product = ({ details }) => {
     navigate(`/product/${id}`)
   }
   return (
-    <div className='col mb-3' onClick={() => setProduct(details._id)}>
+    <div className='col-12 col-sm-6 col-md-4 col-lg-3 mb-3' onClick={() => setProduct(details._id)}>
       <Card style={{ width: '15rem', height: '25rem', cursor: 'pointer' }} className='card-product'>
         <Card.Img
           fluid

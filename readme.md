@@ -7,6 +7,7 @@
 1. [Descripción del proyecto](#descripción-del-proyecto)
 2. [Ver y consultar productos](#ver-y-consultar-productos)
 3. [Inicio de Sesión y registro](#inicio-de-sesión-y-registro)
+4. [Crear productos como administrador](#crear-productos-como-administrador)
 
 ### Descripción del proyecto
 
@@ -66,7 +67,7 @@ Para iniciar sesión o registrarnos debemos hacer click en *account*, la cual se
 La aplicación cuenta con la capacidad de distinguir a un usuario normal de un usuario administrador. El usuario administrador podrá crear nuevos productos.
 
 **Funcionalidades ADMIN**
-- Tiene las mismas funcionalidades del COSTOMER.
+- Tiene las mismas funcionalidades del COSTUMER.
 - Puede dar de alta nuevos productos.
 - Hay un enlace en la Navbar para cargar productos.
 
